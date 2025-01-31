@@ -1,0 +1,28 @@
+{
+  "name": "bharatfd-backend",
+  "version": "1.0.0",
+  "description": "Store and manage FAQs with multi-language translation.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaikarans/bharatFD-backend.git"
+  },
+  "author": "Jaikaran Saini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaikarans/bharatFD-backend/issues"
+  },
+  "homepage": "https://github.com/jaikarans/bharatFD-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

@@ -1,0 +1,16 @@
+services:
+  server:
+    container_name: server-prod
+    volumes:
+      - ./:/app
+      - /app/node_modules/
+    environment:
+      NODE_ENV: production
+    command: node server.js
+
+  mongo:
+    container_name: mongo-prod
+
+  redis:
+    container_name: redis-prod
+    

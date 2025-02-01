@@ -1,0 +1,16 @@
+services:
+  server:
+    container_name: server-dev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+    command: npm run dev
+
+  mongo:
+    container_name: mongo-dev
+
+  redis:
+    container_name: redis-dev
+    

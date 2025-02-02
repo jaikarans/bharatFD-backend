@@ -10,7 +10,7 @@ const startServer = () => {
     server.listen(`${PORT}`, () => {
         logger.log('info', `Server is listening to port: ${PORT}`);
     });
-}
+};
 
 server.on('error', (e) => {
     if (e.code === 'EADDRINUSE') {

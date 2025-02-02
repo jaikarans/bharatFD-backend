@@ -41,3 +41,5 @@ COPY . .
 
 # Run the application.
 # CMD ["node", "server.js"]
+
+ENV TZ Asia/Kolkata

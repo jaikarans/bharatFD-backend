@@ -2,6 +2,7 @@ import http from 'http';
 import app from './src/app.js';
 import { PORT } from './src/config/config.js';
 import { logger } from './src/utils/logger.js';
+import './src/config/database.js';
 
 
 const server = http.createServer(app);

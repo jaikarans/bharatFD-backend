@@ -6,6 +6,8 @@ export const MONGO_USER = process.env.MONGO_USER || "admin"
 
 export const MONGO_PASSWORD = process.env.MONGO_PASSWORD || "password"
 
+export const MONGO_IP = process.env.MONGO_IP || "mongo"
+
 export const MONGO_PORT = process.env.MONGO_PORT || 27017
 
 export const REDIS_PASSWORD = process.env.REDIS_PASSWORD || "password"

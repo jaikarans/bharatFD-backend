@@ -10,6 +10,7 @@ services:
     depends_on:
       - mongo
       - redis
+      - libretranslate
 
   mongo:
     image: mongo
@@ -35,7 +36,24 @@ services:
     volumes:
       - redis-db:/data
 
+  libretranslate:
+    image: libretranslate/libretranslate
+    container_name: libretranslate
+    ports:
+      - "5000:5000"  # Exposes LibreTranslate API on port 5000
+    restart: unless-stopped
+    tty: true
+    environment:
+      - LT_FRONTEND_LANGUAGE_TARGET=en
+      - LT_LOAD_ONLY=en,hi,bn  # Pass the languages to load as an environment variable
+
+
+networks:
+  default:
+    name: bharatfd-faq
+
 volumes:
   mongo-db:
 
   redis-db:
+  # libretranslate_models:

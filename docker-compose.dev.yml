@@ -13,4 +13,7 @@ services:
 
   redis:
     container_name: redis-dev
+
+  libretranslate:
+    container_name: libretranslate
     

@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
-import translateTextTo from '../utils/translate.js';
 import { logger } from '../utils/logger.js';
+import translate from '../utils/translate.js';
 
 // Define the schema with arrays instead of Map
 const faqSchema = new Schema({
@@ -23,15 +23,16 @@ faqSchema.pre('save', async function (next) {
         try {
             // Translate question and answer for Hindi
             faq.question_hi = [
-                { key: 'question', value: await translateTextTo(faq.question, 'hi') },
-                { key: 'answer', value: await translateTextTo(faq.answer, 'hi') }
+                { key: 'question', value: await translate(faq.question, 'hi', 'text') },
+                { key: 'answer', value: await translate(faq.answer, 'hi', 'html') }
             ];
 
             // Translate question and answer for Bengali
             faq.question_bn = [
-                { key: 'question', value: await translateTextTo(faq.question, 'bn') },
-                { key: 'answer', value: await translateTextTo(faq.answer, 'bn') }
+                { key: 'question', value: await translate(faq.question, 'bn', 'text') },
+                { key: 'answer', value: await translate(faq.answer, 'bn', 'html') }
             ];
+
         } catch (error) {
             logger.log('error', `Translation failed: ${error}`);
         }
